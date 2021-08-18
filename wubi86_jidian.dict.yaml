@@ -2,7 +2,7 @@
 ---
 name: wubi86_jidian
 version: "4.3"
-sort: original #by_weight/权重 original/原始
+sort: by_weight #by_weight/权重 original/原始
 import_tables: #此处是添加用户自定义词库的地方
   - wubi86_jidian_addition            # WubiBuddy用户词存储位置
   - wubi86_jidian_user                # 个人私有词库
@@ -18045,6 +18045,7 @@ Apple	appl
 都	ftjb
 殾	ftjc
 者	ftjf
+都是	ftjg
 老师	ftjg
 教师	ftjg
 老早	ftjh

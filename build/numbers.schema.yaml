@@ -2,7 +2,7 @@ __build_info:
   rime_version: 1.7.3
   timestamps:
     default: 1613228859
-    default.custom: 1629112888
+    default.custom: 1629198656
     key_bindings: 1613228859
     key_bindings.custom: 0
     numbers.custom: 0
@@ -25,7 +25,7 @@ key_binder:
     - {accept: apostrophe, send: e, when: has_menu}
 menu:
   alternative_select_keys: acegi
-  page_size: 5
+  page_size: 4
 punctuator:
   full_shape:
     "!": "壹"
