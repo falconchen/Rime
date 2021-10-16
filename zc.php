@@ -14,11 +14,11 @@ if(!preg_match('#[a-z]+#',$code)){
 $weight = $argv[3] ?? 1;
 
 $content = file_get_contents($dictFile);
-if(substr($content,-1) !== "\n"){
+if(substr($content,-1) !== PHP_EOL){
 	$word=PHP_EOL.$word;
 }
 
-$row = sprintf("%s	%s	%d",$word,$code,$weight);
+$row = sprintf("%s	%s	%d".PHP_EOL,$word,$code,$weight);
 if(file_put_contents($dictFile,$row,FILE_APPEND)){
 	echo "...".PHP_EOL;
 	echo tail($dictFile,2);
