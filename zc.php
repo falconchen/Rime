@@ -6,9 +6,9 @@ if($argc<3){
 }
 
 $word = $raw = $argv[1];
-$chars = strtolower($argv[2]);
+$code = strtolower($argv[2]);
 
-if(!preg_match('#[a-z]+#',$chars)){
+if(!preg_match('#[a-z]+#',$code)){
 	exit("Arg Error");
 }
 $weight = $argv[3] ?? 1;
@@ -18,7 +18,7 @@ if(substr($content,-1) !== "\n"){
 	$word=PHP_EOL.$word;
 }
 
-$row = sprintf("%s	%s	%d",$word,$chars,$weight);
+$row = sprintf("%s	%s	%d",$word,$code,$weight);
 if(file_put_contents($dictFile,$row,FILE_APPEND)){
 	echo "...".PHP_EOL;
 	echo tail($dictFile,2);
@@ -27,7 +27,7 @@ if(file_put_contents($dictFile,$row,FILE_APPEND)){
 	$dir = dirname($dictFile);
 	$file = basename($dictFile);
 	echo PHP_EOL;
-	$cmd = "cd $dir && git add $file && git commit -m 'add new word `$raw`' && git push ";
+	$cmd = "cd $dir && git add $file && git commit -m 'add new word `$raw`,code:`$code`' && git push ";
 	shell_exec($cmd);
 	
 	
