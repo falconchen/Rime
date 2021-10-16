@@ -94,4 +94,4 @@ patch:
     com.alfredapp.Alfred:
       ascii_mode: false
     com.googlecode.iterm2:
-      ascii_mode: true
+      ascii_mode: false 
