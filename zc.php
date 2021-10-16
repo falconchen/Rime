@@ -27,7 +27,7 @@ if(file_put_contents($dictFile,$row,FILE_APPEND)){
 	$dir = dirname($dictFile);
 	$file = basename($dictFile);
 	echo PHP_EOL;
-	$cmd = "cd $dir && git add $file && git commit -m 'update user dict add $raw' && git push ";
+	$cmd = "cd $dir && git add $file && git commit -m 'add new word `$raw`' && git push ";
 	shell_exec($cmd);
 	
 	
