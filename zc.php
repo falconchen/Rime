@@ -5,7 +5,7 @@ if($argc<3){
 	exit("Arg Number Error");
 }
 
-$word = $argv[1];
+$word = $raw = $argv[1];
 $chars = strtolower($argv[2]);
 
 if(!preg_match('#[a-z]+#',$chars)){
@@ -15,15 +15,23 @@ $weight = $argv[3] ?? 1;
 
 $content = file_get_contents($dictFile);
 if(substr($content,-1) !== "\n"){
-	$word="\n".$word;
+	$word=PHP_EOL.$word;
 }
 
 $row = sprintf("%s	%s	%d",$word,$chars,$weight);
 if(file_put_contents($dictFile,$row,FILE_APPEND)){
+	echo "...".PHP_EOL;
 	echo tail($dictFile,2);
-	$cmd = '/Library/Input\ Methods/Squirrel.app/Contents/MacOS/Squirrel --reload';
-	$output = shell_exec($cmd);
-	echo "$output";
+	$reload = '/Library/Input\ Methods/Squirrel.app/Contents/MacOS/Squirrel --reload';
+	shell_exec($reload);
+	$dir = dirname($dictFile);
+	$file = basename($dictFile);
+	echo PHP_EOL;
+	$cmd = "cd $dir && git add $file && git commit -m 'update user dict add $raw' && git push ";
+	shell_exec($cmd);
+	
+	
+
 }
 
 function tail($file, $num) {
