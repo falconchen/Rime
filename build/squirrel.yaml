@@ -2,12 +2,12 @@ __build_info:
   rime_version: 1.7.3
   timestamps:
     squirrel: 1613228858
-    squirrel.custom: 1634381746
+    squirrel.custom: 1639652108
 app_options:
   com.alfredapp.Alfred:
     ascii_mode: false
   com.googlecode.iterm2:
-    ascii_mode: false
+    ascii_mode: true
 chord_duration: 0.1
 config_version: 0.37
 preset_color_schemes:
