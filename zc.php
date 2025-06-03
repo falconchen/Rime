@@ -1,4 +1,4 @@
-#!/usr/bin/env php
+#!/usr/local/opt/php@8.0/bin/php
 <?php
 $dictFile = '/Users/falcon/Library/Rime/wubi86_jidian_user.dict.yaml';
 if($argc<3){
@@ -9,7 +9,12 @@ $word = $raw = $argv[1];
 $code = strtolower($argv[2]);
 
 if(!preg_match('#[a-z]+#',$code)){
-	exit("Arg Error");
+	if(preg_match('#[a-z]+#',$word)){
+		$word = $code;	
+		$code = $raw;
+	}else{
+	  exit("Arg Error");
+	}
 }
 $weight = $argv[3] ?? 1;
 

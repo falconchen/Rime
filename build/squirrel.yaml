@@ -1,15 +1,14 @@
 __build_info:
-  rime_version: 1.7.3
+  rime_version: 1.8.4
   timestamps:
-    squirrel: 1613228858
-    squirrel.custom: 1639652108
+    squirrel: 1675085450
+    squirrel.custom: 1676860140
 app_options:
   com.alfredapp.Alfred:
     ascii_mode: false
-  com.googlecode.iterm2:
-    ascii_mode: true
 chord_duration: 0.1
 config_version: 0.37
+keyboard_layout: default
 preset_color_schemes:
   calm:
     back_color: 0xEFEFF4
@@ -48,6 +47,7 @@ preset_color_schemes:
     comment_font_point: 16
     comment_text_color: 0x5AC461
     corner_radius: 5
+    font_face: "LXGW WenKai Screen"
     font_point: 18
     hilited_back_color: 0xEFEFF4
     hilited_candidate_back_color: 0xEDEDF9
@@ -66,4 +66,3 @@ preset_color_schemes:
 show_notifications_when: appropriate
 style:
   color_scheme: roseo_maple
-us_keyboard_layout: false
